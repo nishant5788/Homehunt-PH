@@ -1,0 +1,54 @@
+.about {
+  min-height: 100vh;
+}
+
+.hero {
+  padding: 100px 20px;
+  text-align: center;
+  background: #f8fafc;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: auto;
+  color: #666;
+}
+
+.content {
+  max-width: 1200px;
+  margin: auto;
+
+  padding: 80px 20px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
+
+.stats {
+  padding: 80px 20px;
+
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+
+  text-align: center;
+}
+
+.stats h3 {
+  font-size: 2.5rem;
+  color: #2563eb;
+}

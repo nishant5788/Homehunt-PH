@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "title": "Luxury Condo",
+    "city": "Taguig",
+    "price": 35000,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "image": "https://images.unsplash.com/photo-1560185007-c5ca9d2c014d",
+    "lat": 14.5547,
+    "lng": 121.0244
+  },
+  {
+    "id": 2,
+    "title": "Family House",
+    "city": "Angeles City",
+    "price": 28000,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    "lat": 15.1456,
+    "lng": 120.5887
+  },
+  {
+    "id": 3,
+    "title": "Modern Apartment",
+    "city": "Cebu City",
+    "price": 18000,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750",
+    "lat": 10.3157,
+    "lng": 123.8854
+  }
+]

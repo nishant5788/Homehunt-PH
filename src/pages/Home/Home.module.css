@@ -1,0 +1,153 @@
+.hero {
+  height: 80vh;
+  background:
+    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+    url("https://images.unsplash.com/photo-1560518883-ce09059eeffa");
+  background-size: cover;
+  background-position: center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+}
+
+.heroContent {
+  max-width:700px;
+  padding:20px;
+}
+
+.hero h1 {
+  font-size:4rem;
+  margin-bottom:20px;
+}
+
+.hero p {
+  font-size:1.2rem;
+  line-height:1.7;
+  margin-bottom:30px;
+}
+
+.heroButtons {
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.heroButtons button {
+  padding:14px 26px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:1rem;
+  font-weight:600;
+}
+
+.secondary {
+  background:white;
+}
+
+.featured,
+.whyUs,
+.cities {
+  max-width:1200px;
+  margin:auto;
+  padding:80px 20px;
+}
+
+.sectionHeader {
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.sectionHeader h2 {
+  font-size:2.5rem;
+  margin-bottom:10px;
+}
+
+.sectionHeader p {
+  color:#666;
+}
+
+.propertyGrid {
+  display:grid;
+  grid-template-columns:
+  repeat(auto-fit,minmax(300px,1fr));
+  gap:25px;
+}
+
+.card {
+  background:white;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+  transition:.3s;
+}
+
+.card:hover {
+  transform:translateY(-6px);
+}
+
+.card img {
+  width:100%;
+  height:240px;
+  object-fit:cover;
+}
+
+.cardBody {
+  padding:20px;
+}
+
+.cardBody h3 {
+  margin-bottom:10px;
+}
+
+.cardBody p {
+  color:#777;
+  margin-bottom:10px;
+}
+
+.cardBody h4 {
+  color:#2563eb;
+}
+
+.whyUs {
+  background:#f8fafc;
+  max-width:none;
+}
+
+.features {
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:
+  repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.feature {
+  background:white;
+  padding:30px;
+  border-radius:15px;
+}
+
+.feature h3 {
+  margin-bottom:15px;
+}
+
+.cityGrid {
+  display:grid;
+  grid-template-columns:
+  repeat(auto-fit,minmax(180px,1fr));
+  gap:20px;
+}
+
+.cityGrid div {
+  background:#2563eb;
+  color:white;
+  padding:30px;
+  text-align:center;
+  border-radius:12px;
+  font-weight:bold;
+}
