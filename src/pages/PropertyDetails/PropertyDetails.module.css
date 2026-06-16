@@ -2,6 +2,10 @@
   min-height: 100vh;
 }
 
+.imageSection {
+  position: relative;
+}
+
 .imageSection img {
   width: 100%;
   height: 500px;
@@ -30,10 +34,21 @@
   color: #666;
 }
 
+.backBtn {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  font-weight: 700;
+  background: none;
+  border: 0;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
 .favoriteBtn {
   border: none;
   padding: 14px 24px;
-  background: #ef4444;
+  background: #000;
   color: white;
   border-radius: 10px;
   cursor: pointer;

@@ -1,19 +1,16 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./PropertyCard.module.css";
 
-// const navigate = useNavigate();
-
 function PropertyCard({property}) {
-
     
 
   return (
+    
     <div className={styles.card}>
               <img
                 src={property.image}
                 alt={property.title}
               />
-    
               <div className={styles.cardBody}>
                 <h3>{property.title}</h3>
                 <p>{property.city}</p>

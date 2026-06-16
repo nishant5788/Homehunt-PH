@@ -6,7 +6,7 @@ const BASE_URL = "http://localhost:8000";
 
 function Properties() {
   const [allProperties, setAllProperties] = useState([]);
-  const [isLoading, setIsLoading] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(function(){
 
@@ -60,7 +60,7 @@ function Properties() {
 
       <section className={styles.propertyGrid}>
 
-        {allProperties.map(property => <PropertyCard key={property.id} property={property} /> )}
+        {allProperties.map(property => <PropertyCard key={property.id} property={property} isLoading={isLoading} /> )}
 
       </section>
 

@@ -1,37 +1,127 @@
 {
   "properties": [
-  {
-    "id": 1,
-    "title": "Luxury Condo",
-    "city": "Taguig",
-    "price": 35000,
-    "bedrooms": 2,
-    "bathrooms": 2,
-    "image": "https://images.unsplash.com/photo-1560185007-c5ca9d2c014d",
-    "lat": 14.5547,
-    "lng": 121.0244
-  },
-  {
-    "id": 2,
-    "title": "Family House",
-    "city": "Angeles City",
-    "price": 28000,
-    "bedrooms": 3,
-    "bathrooms": 2,
-    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
-    "lat": 15.1456,
-    "lng": 120.5887
-  },
-  {
-    "id": 3,
-    "title": "Modern Apartment",
-    "city": "Cebu City",
-    "price": 18000,
-    "bedrooms": 1,
-    "bathrooms": 1,
-    "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750",
-    "lat": 10.3157,
-    "lng": 123.8854
-  }
-]
+    {
+      "id": 1,
+      "title": "Luxury Condo",
+      "city": "Bonifacio Global City",
+      "province": "Taguig, Metro Manila",
+      "price": 35000,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "area": 85,
+      "description": "Modern furnished condo in BGC close to shopping malls, restaurants, offices and public transport.",
+      "features": [
+        "Parking",
+        "Air Conditioning",
+        "High-Speed Internet",
+        "24/7 Security",
+        "Swimming Pool",
+        "Gym Access"
+      ],
+      "ownerName": "John Santos",
+      "ownerPhone": "0917-123-4567",
+      "ownerEmail": "john.santos@email.com",
+      "image": "https://images.unsplash.com/photo-1560185007-c5ca9d2c014d",
+      "lat": 14.5547,
+      "lng": 121.0244
+    },
+
+    {
+      "id": 2,
+      "title": "Family House",
+      "city": "Clark Freeport Zone",
+      "province": "Angeles City, Pampanga",
+      "price": 28000,
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "area": 120,
+      "description": "Spacious family home located near schools, supermarkets and business districts.",
+      "features": [
+        "Garage",
+        "Garden",
+        "Pet Friendly",
+        "Air Conditioning",
+        "Security Cameras"
+      ],
+      "ownerName": "Maria Cruz",
+      "ownerPhone": "0918-222-3344",
+      "ownerEmail": "maria.cruz@email.com",
+      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+      "lat": 15.1456,
+      "lng": 120.5887
+    },
+
+    {
+      "id": 3,
+      "title": "Modern Apartment",
+      "city": "IT Park",
+      "province": "Cebu City, Cebu",
+      "price": 18000,
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "area": 55,
+      "description": "Modern apartment in Cebu IT Park with easy access to offices, cafes and nightlife.",
+      "features": [
+        "Fiber Internet",
+        "Elevator",
+        "Security",
+        "Backup Power"
+      ],
+      "ownerName": "Mark Reyes",
+      "ownerPhone": "0920-567-8899",
+      "ownerEmail": "mark.reyes@email.com",
+      "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750",
+      "lat": 10.3157,
+      "lng": 123.8854
+    },
+
+    {
+      "id": 4,
+      "title": "Beachfront Villa",
+      "city": "Mactan Island",
+      "province": "Lapu-Lapu City, Cebu",
+      "price": 65000,
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "area": 220,
+      "description": "Luxury beachfront villa with private pool and stunning sea views.",
+      "features": [
+        "Private Pool",
+        "Beach Access",
+        "Parking",
+        "Garden",
+        "Security"
+      ],
+      "ownerName": "Jennifer Lim",
+      "ownerPhone": "0915-777-1122",
+      "ownerEmail": "jennifer.lim@email.com",
+      "image": "https://images.unsplash.com/photo-1613977257363-707ba9348227",
+      "lat": 10.3090,
+      "lng": 123.9494
+    },
+
+    {
+      "id": 5,
+      "title": "Studio Condo",
+      "city": "Makati CBD",
+      "province": "Makati, Metro Manila",
+      "price": 22000,
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "area": 40,
+      "description": "Affordable studio condo perfect for young professionals working in Makati.",
+      "features": [
+        "Gym",
+        "Swimming Pool",
+        "Security",
+        "WiFi Ready"
+      ],
+      "ownerName": "Carlos Mendoza",
+      "ownerPhone": "0916-444-9988",
+      "ownerEmail": "carlos.mendoza@email.com",
+      "image": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688",
+      "lat": 14.5545,
+      "lng": 121.0240
+    }
+  ]
 }
