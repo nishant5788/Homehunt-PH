@@ -4,6 +4,7 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Properties from "./pages/Properties/Properties";
+import PropertyDetails from "./pages/PropertyDetails/PropertyDetails";
 import Favorites from "./pages/Favorites/Favorites";
 import Layout from "./components/Layout/Layout";
 
@@ -17,6 +18,7 @@ function App() {
     <Route path="/about" element={<About />} />
     <Route path="/contact" element={<Contact />} />
     <Route path="/properties" element={<Properties />} />
+    <Route path="/properties/:id" element={<PropertyDetails />} />
     <Route path="/favorites" element={<Favorites />} />
     </Route>
    </Routes>

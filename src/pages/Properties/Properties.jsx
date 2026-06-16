@@ -1,6 +1,34 @@
+import { useEffect, useState } from "react";
+import PropertyCard from "../../components/PropertyCard/PropertyCard";
 import styles from "./Properties.module.css";
 
+const BASE_URL = "http://localhost:8000";
+
 function Properties() {
+  const [allProperties, setAllProperties] = useState([]);
+  const [isLoading, setIsLoading] = useState({});
+
+  useEffect(function(){
+
+    async function fetchProperties() {
+      try {
+      setIsLoading(true);
+      const res = await fetch(`${BASE_URL}/properties`);
+      const data = await res.json();
+      setAllProperties(data);
+      }
+      catch {
+        alert("There is some error loading Properties...");
+      }
+      finally {
+        setIsLoading(false);
+      }
+    }
+
+    fetchProperties();
+
+  }, []);
+
   return (
     <main className={styles.propertiesPage}>
 
@@ -32,26 +60,7 @@ function Properties() {
 
       <section className={styles.propertyGrid}>
 
-        <div className={styles.card}>
-          <img
-            src="https://images.unsplash.com/photo-1560185007-c5ca9d2c014d"
-            alt=""
-          />
-
-          <div className={styles.cardBody}>
-            <h3>Luxury Condo</h3>
-
-            <p>Taguig</p>
-
-            <span>2 Bed • 2 Bath</span>
-
-            <h4>₱35,000/month</h4>
-
-            <button>
-              View Details
-            </button>
-          </div>
-        </div>
+        {allProperties.map(property => <PropertyCard key={property.id} property={property} /> )}
 
       </section>
 
