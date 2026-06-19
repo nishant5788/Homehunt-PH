@@ -122,6 +122,31 @@
       "image": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688",
       "lat": 14.5545,
       "lng": 121.0240
+    },
+
+    {
+      "id": 8,
+      "title": "Beachfront Villa",
+      "city": "Mactan Island",
+      "province": "Lapu-Lapu City, Cebu",
+      "price": 65000,
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "area": 220,
+      "description": "Luxury beachfront villa with private pool and stunning sea views.",
+      "features": [
+        "Private Pool",
+        "Beach Access",
+        "Parking",
+        "Garden",
+        "Security"
+      ],
+      "ownerName": "Jennifer Lim",
+      "ownerPhone": "0915-777-1122",
+      "ownerEmail": "jennifer.lim@email.com",
+      "image": "https://images.unsplash.com/photo-1613977257363-707ba9348227",
+      "lat": 10.3090,
+      "lng": 123.9494
     }
   ]
 }
