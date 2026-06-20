@@ -34,10 +34,9 @@ function PopularCities() {
   }, []);
 
   return (
-    <section className={styles.cities}>
-      <div className={styles.sectionHeader}>
-        <h2>Popular Cities</h2>
-      </div>
+    <section className="section">
+      <div className="container">
+        <h2 className="section__title">Popular Cities</h2>
 
       <div className={styles.cityGrid}>
         {cities.map((cityItem) => (
@@ -48,6 +47,7 @@ function PopularCities() {
             {cityItem.city} <br /> <small>({cityItem.count})</small>
           </Link>
         ))}
+      </div>
       </div>
     </section>
   );
