@@ -3,6 +3,9 @@ import PropertyCard from "../../components/PropertyCard/PropertyCard";
 import styles from "./Properties.module.css";
 import { useSearchParams } from "react-router-dom";
 import PropertiesFilters from "../../components/PropertiesFilters/PropertiesFilters";
+import Message from "../../components/Message/Message";
+import Spinner from "../../components/Spinner/Spinner";
+import { delay } from "../../utils/delay";
 
 const BASE_URL = "http://localhost:8000";
 
@@ -21,6 +24,7 @@ function Properties() {
   const [searchTerm, setSearchTerm] = useState("");
   let filteredProperties = allProperties;
   const [selectedCity, setSelectedCity] = useState("All");
+   const [error, setError] = useState("");
 
   if (searchedCity) {
     filteredProperties = filteredProperties.filter(
@@ -48,14 +52,18 @@ function Properties() {
       async function fetchProperties() {
         const controller = new AbortController();
         try {
+          setError("");
           setIsLoading(true);
           const res = await fetch(`${BASE_URL}/properties`, {
             signal: controller.signal,
           });
           const data = await res.json();
+
+          await delay(import.meta.env.DEV ? 1000 : 0);
+
           setAllProperties(data);
         } catch {
-          alert("There is some error loading Properties...");
+          setError("There is some error loading Properties...");
         } finally {
           setIsLoading(false);
         }
@@ -88,6 +96,9 @@ function Properties() {
         selectedCity={selectedCity}
         setSelectedCity={setSelectedCity}
       />
+
+{error && <Message message={error} />}
+      {isLoading && <Spinner />}
 
       <section className={styles.propertyGrid}>
         {filteredProperties.map((property) => (

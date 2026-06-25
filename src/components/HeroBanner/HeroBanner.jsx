@@ -1,6 +1,10 @@
+import { Navigate, useNavigate } from "react-router-dom";
 import styles from "./HeroBanner.module.css";
 
 function HeroBanner() {
+
+  const navigate = useNavigate();
+
   return (
     <section className={styles.hero}>
       <div className={styles.heroContent}>
@@ -12,7 +16,9 @@ function HeroBanner() {
         </p>
 
         <div className={styles.heroButtons}>
-          <button>Browse Properties</button>
+          <button onClick={() => {
+            navigate("/properties")
+          }}>Browse Properties</button>
           <button className={styles.secondary}>Post Property</button>
         </div>
       </div>

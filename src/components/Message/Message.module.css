@@ -1,0 +1,8 @@
+.message {
+  text-align: center;
+  font-size: 1rem;
+  width: 80%;
+  margin: 2rem auto;
+  color: red;
+  font-weight: 700;
+}

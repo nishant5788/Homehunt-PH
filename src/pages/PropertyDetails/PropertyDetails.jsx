@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import {useParams } from "react-router-dom";
 import styles from "./PropertyDetails.module.css";
 import { useEffect, useState } from "react";
 
