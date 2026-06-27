@@ -7,17 +7,15 @@ const PropertiesContext = createContext();
 
 function PropertiesProvider({ children }) {
   const [properties, setProperties] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
 
   async function fetchProperties() {
-    const controller = new AbortController();
+    // const controller = new AbortController();
     try {
       setError("");
       setIsLoading(true);
-      const res = await fetch(`${BASE_URL}/properties`, {
-        signal: controller.signal,
-      });
+      const res = await fetch(`${BASE_URL}/properties`);
       const data = await res.json();
 
       await delay(import.meta.env.DEV ? 1000 : 0);

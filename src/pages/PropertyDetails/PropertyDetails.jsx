@@ -1,51 +1,44 @@
-import {useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import styles from "./PropertyDetails.module.css";
 import { useProperties } from "../../contexts/PropertiesContext";
-
+import Message from "../../components/Message/Message";
+import Spinner from "../../components/Spinner/Spinner";
 
 function PropertyDetails() {
-  const params = useParams();
+  const { id } = useParams();
 
-  console.log(params.id);
+  console.log(id);
 
-  // const [currentProperty, setCurrentProperty] = useState({});
-  const {properties} = useProperties();
+  const { properties, isLoading } = useProperties();
 
+  if (isLoading) return <Spinner />;
 
-  // useEffect(
-  //   function () {
-  //     async function fetchProperties() {
-  //       try {
-  //         setIsLoading(true);
-  //         const res = await fetch(`${BASE_URL}/properties/${params.id}`);
-  //         const data = await res.json();
-  //         setCurrentProperty(data);
-  //       } catch {
-  //         alert("There is some error loading Properties...");
-  //       } finally {
-  //         setIsLoading(false);
-  //       }
-  //     }
+  console.log("properties", properties);
+  console.log("id from url", id);
+  console.log(
+    "property ids",
+    properties.map((p) => p.id),
+  );
 
-  //     fetchProperties();
-  //   },
-  //   [params.id],
-  // );
-  const currentProperty = properties.find((property) => property.id === params.id);
+  const property = properties.find(
+    (property) => Number(property.id) === Number(id),
+  );
+
+  if (!property) return <Message message="Property not found" />;
 
   return (
     <main className={styles.detailsPage}>
       <section className={styles.imageSection}>
         <button className={styles.backBtn}>Back</button>
-        <img src={currentProperty.image} alt={currentProperty.title} />
+        <img src={property.image} alt={property.title} />
       </section>
 
       <section className={styles.content}>
         <div className={styles.heading}>
           <div>
-            <h1>{currentProperty.title}</h1>
+            <h1>{property.title}</h1>
             <p>
-              📍 {currentProperty.city} {currentProperty.province}
+              📍 {property.city} {property.province}
             </p>
           </div>
 
@@ -53,26 +46,28 @@ function PropertyDetails() {
         </div>
 
         <div className={styles.priceBox}>
-          <h2>₱{currentProperty.price} / month</h2>
+          <h2>₱{property.price} / month</h2>
 
           <div className={styles.stats}>
-            <span>{currentProperty.bedrooms} Bedrooms</span>
-            <span>{currentProperty.bathrooms} Bathrooms</span>
-            <span>85 sqm</span>
+            <span>{property.bedrooms} Bedrooms</span>
+            <span>{property.bathrooms} Bathrooms</span>
+            <span>{property.area} sqm</span>
           </div>
         </div>
 
         <section className={styles.description}>
           <h3>Description</h3>
 
-          <p>{currentProperty.description}</p>
+          <p>{property.description}</p>
         </section>
 
         <section className={styles.features}>
           <h3>Property Features</h3>
 
           <ul>
-            {currentProperty.features?.map((feature) => <li>{feature}</li>)}            
+            {property.features?.map((feature) => (
+              <li>{feature}</li>
+            ))}
           </ul>
         </section>
 
@@ -85,9 +80,9 @@ function PropertyDetails() {
         <section className={styles.owner}>
           <h3>Property Owner</h3>
 
-          <p>{currentProperty.ownerName}</p>
-          <p>{currentProperty.ownerPhone}</p>
-          <p>{currentProperty.ownerEmail}</p>
+          <p>{property.ownerName}</p>
+          <p>{property.ownerPhone}</p>
+          <p>{property.ownerEmail}</p>
 
           <button>Contact Owner</button>
         </section>
