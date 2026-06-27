@@ -1,0 +1,138 @@
+.detailsPage {
+  min-height: 100vh;
+}
+
+.imageSection {
+  position: relative;
+}
+
+.imageSection img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.content {
+  max-width: 1200px;
+  margin: auto;
+  padding: 50px 20px;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.heading h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.heading p {
+  color: #666;
+}
+
+.backBtn {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  font-weight: 700;
+  background: none;
+  border: 0;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.favoriteBtn {
+  border: none;
+  padding: 14px 24px;
+  background: #000;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.priceBox {
+  background: #f8fafc;
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+}
+
+.priceBox h2 {
+  color: #2563eb;
+  margin-bottom: 20px;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.description,
+.features,
+.mapPlaceholder,
+.owner {
+  margin-bottom: 50px;
+}
+
+.description h3,
+.features h3,
+.mapPlaceholder h3,
+.owner h3 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.features ul {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit,minmax(200px,1fr));
+  gap: 15px;
+
+  list-style: none;
+}
+
+.features li {
+  background: #f8fafc;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.fakeMap {
+  height: 350px;
+  border-radius: 15px;
+  background: #e2e8f0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.2rem;
+}
+
+.owner {
+  background: #f8fafc;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.owner p {
+  margin-bottom: 10px;
+}
+
+.owner button {
+  margin-top: 20px;
+
+  border: none;
+  padding: 14px 24px;
+
+  background: #2563eb;
+  color: white;
+
+  border-radius: 10px;
+  cursor: pointer;
+}

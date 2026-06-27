@@ -3,6 +3,7 @@ import styles from "./PropertyCard.module.css";
 
 function PropertyCard({property}) {
     
+
   return (
     
     <div className={styles.card}>

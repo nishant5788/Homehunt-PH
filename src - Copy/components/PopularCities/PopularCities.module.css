@@ -1,0 +1,17 @@
+.cityGrid {
+  display:grid;
+  grid-template-columns:
+  repeat(auto-fit,minmax(180px,1fr));
+  gap:20px;
+}
+
+.cityGrid a {
+  display: block;
+  text-decoration: none;
+  background:#2563eb;
+  color:white;
+  padding:30px;
+  text-align:center;
+  border-radius:12px;
+  font-weight:bold;
+}

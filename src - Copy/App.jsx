@@ -7,12 +7,10 @@ import Properties from "./pages/Properties/Properties";
 import PropertyDetails from "./pages/PropertyDetails/PropertyDetails";
 import Favorites from "./pages/Favorites/Favorites";
 import Layout from "./components/Layout/Layout";
-import { PropertiesProvider } from "./contexts/PropertiesContext";
 
 
 function App() {
   return (
-  <PropertiesProvider>
    <BrowserRouter>
    <Routes>
     <Route path="/" element={<Layout />}>
@@ -25,7 +23,6 @@ function App() {
     </Route>
    </Routes>
    </BrowserRouter>
-   </PropertiesProvider>
   )
 }
 

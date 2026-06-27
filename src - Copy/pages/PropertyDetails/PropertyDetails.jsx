@@ -1,37 +1,36 @@
 import {useParams } from "react-router-dom";
 import styles from "./PropertyDetails.module.css";
-import { useProperties } from "../../contexts/PropertiesContext";
+import { useEffect, useState } from "react";
 
+const BASE_URL = "http://localhost:8000";
 
 function PropertyDetails() {
   const params = useParams();
 
   console.log(params.id);
 
-  // const [currentProperty, setCurrentProperty] = useState({});
-  const {properties} = useProperties();
+  const [currentProperty, setCurrentProperty] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
 
+  useEffect(
+    function () {
+      async function fetchProperties() {
+        try {
+          setIsLoading(true);
+          const res = await fetch(`${BASE_URL}/properties/${params.id}`);
+          const data = await res.json();
+          setCurrentProperty(data);
+        } catch {
+          alert("There is some error loading Properties...");
+        } finally {
+          setIsLoading(false);
+        }
+      }
 
-  // useEffect(
-  //   function () {
-  //     async function fetchProperties() {
-  //       try {
-  //         setIsLoading(true);
-  //         const res = await fetch(`${BASE_URL}/properties/${params.id}`);
-  //         const data = await res.json();
-  //         setCurrentProperty(data);
-  //       } catch {
-  //         alert("There is some error loading Properties...");
-  //       } finally {
-  //         setIsLoading(false);
-  //       }
-  //     }
-
-  //     fetchProperties();
-  //   },
-  //   [params.id],
-  // );
-  const currentProperty = properties.find((property) => property.id === params.id);
+      fetchProperties();
+    },
+    [params.id],
+  );
 
   return (
     <main className={styles.detailsPage}>

@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PropertyCard from "../../components/PropertyCard/PropertyCard";
 import styles from "./Properties.module.css";
 import { useSearchParams } from "react-router-dom";
 import PropertiesFilters from "../../components/PropertiesFilters/PropertiesFilters";
 import Message from "../../components/Message/Message";
 import Spinner from "../../components/Spinner/Spinner";
-import { useProperties } from "../../contexts/PropertiesContext";
+import { delay } from "../../utils/delay";
 
+const BASE_URL = "http://localhost:8000";
 
 function formatCity(slug) {
   return slug
@@ -16,12 +17,14 @@ function formatCity(slug) {
 }
 
 function Properties() {
-  const {properties, isLoading, error} = useProperties();
+  const [allProperties, setAllProperties] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [searchParams] = useSearchParams();
   const searchedCity = searchParams.get("city");
   const [searchTerm, setSearchTerm] = useState("");
-  let filteredProperties = properties;
+  let filteredProperties = allProperties;
   const [selectedCity, setSelectedCity] = useState("All");
+   const [error, setError] = useState("");
 
   if (searchedCity) {
     filteredProperties = filteredProperties.filter(
@@ -43,6 +46,35 @@ function Properties() {
       property.province.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }
+
+  useEffect(
+    function () {
+      async function fetchProperties() {
+        const controller = new AbortController();
+        try {
+          setError("");
+          setIsLoading(true);
+          const res = await fetch(`${BASE_URL}/properties`, {
+            signal: controller.signal,
+          });
+          const data = await res.json();
+
+          await delay(import.meta.env.DEV ? 1000 : 0);
+
+          setAllProperties(data);
+        } catch {
+          setError("There is some error loading Properties...");
+        } finally {
+          setIsLoading(false);
+        }
+      }
+
+      fetchProperties();
+
+      console.log("searchTerm is" + searchTerm);
+    },
+    [searchedCity, searchTerm],
+  );
 
   return (
     <main className={styles.propertiesPage}>
