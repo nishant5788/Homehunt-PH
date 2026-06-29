@@ -7,7 +7,6 @@ import Message from "../../components/Message/Message";
 import Spinner from "../../components/Spinner/Spinner";
 import { useProperties } from "../../contexts/PropertiesContext";
 
-
 function formatCity(slug) {
   return slug
     .split("-")
@@ -16,7 +15,7 @@ function formatCity(slug) {
 }
 
 function Properties() {
-  const {properties, isLoading, error} = useProperties();
+  const { properties, isLoading, error } = useProperties();
   const [searchParams] = useSearchParams();
   const searchedCity = searchParams.get("city");
   const [searchTerm, setSearchTerm] = useState("");
@@ -37,10 +36,11 @@ function Properties() {
   }
 
   if (searchTerm) {
-    filteredProperties = filteredProperties.filter((property) =>
-      property.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      property.city.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      property.province.toLowerCase().includes(searchTerm.toLowerCase())
+    filteredProperties = filteredProperties.filter(
+      (property) =>
+        property.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        property.city.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        property.province.toLowerCase().includes(searchTerm.toLowerCase()),
     );
   }
 
@@ -65,7 +65,7 @@ function Properties() {
         setSelectedCity={setSelectedCity}
       />
 
-{error && <Message message={error} />}
+      {error && <Message message={error} />}
       {isLoading && <Spinner />}
 
       <section className={styles.propertyGrid}>

@@ -1,61 +1,34 @@
+import PropertyCard from "../../components/PropertyCard/PropertyCard";
 import styles from "./Favorites.module.css";
+import Message from "../../components/Message/Message";
+import Spinner from "../../components/Spinner/Spinner";
+import { useProperties } from "../../contexts/PropertiesContext";
+
 
 function Favorites() {
+  const {favoriteProperties, isLoading, error } = useProperties();
+
   return (
-    <section className={styles.favorites}>
-      <div className="container">
+    <main className={styles.propertiesPage}>
+      <section className={styles.hero}>
+        <h1>❤️ My Favorites</h1>
+        <p>Save properties you love and access them anytime.</p>
+        <p>{favoriteProperties.length} Saved Properties</p>
+      </section>
 
-        <div className={styles.header}>
-          <h1>❤️ My Favorites</h1>
-          <p>Save properties you love and access them anytime.</p>
-        </div>
+      {error && <Message message={error} />}
+      {isLoading && <Spinner />}
 
-        <p className={styles.count}>
-          3 Saved Properties
-        </p>
-
-        <div className={styles.grid}>
-
-          {/* Property Card */}
-
-          <article className={styles.card}>
-            <img
-              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750"
-              alt=""
-            />
-
-            <div className={styles.content}>
-
-              <h3>Modern Apartment</h3>
-
-              <p className={styles.location}>
-                📍 Cebu City
-              </p>
-
-              <p className={styles.price}>
-                ₱18,000 / month
-              </p>
-
-              <div className={styles.info}>
-                <span>🛏 1 Bed</span>
-                <span>🚿 1 Bath</span>
-                <span>📐 55 sqm</span>
-              </div>
-
-              <div className={styles.buttons}>
-                <button>View Details</button>
-                <button className={styles.remove}>
-                  Remove
-                </button>
-              </div>
-
-            </div>
-          </article>
-
-        </div>
-
-      </div>
-    </section>
+      <section className={styles.propertyGrid}>
+        {favoriteProperties.map((property) => (
+          <PropertyCard
+            key={property.id}
+            property={property}
+            isLoading={isLoading}
+          />
+        ))}
+      </section>
+    </main>
   );
 }
 

@@ -1,11 +1,8 @@
 .card {
   background: white;
-
-  border-radius: 15px;
-
+  border-radius: 0.6rem;
   overflow: hidden;
-
-  box-shadow: 0 2px 15px rgba(0,0,0,.08);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, .3);
 }
 
 .card img {
@@ -48,4 +45,16 @@
   text-decoration: none;
   display: inline-block;
   text-align: center;
+}
+
+.cardBody .favorites {
+  background: #ffe6e6;
+  color: #d60000;
+  font-weight: 700;
+}
+
+.cardButtons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }

@@ -9,6 +9,11 @@ function PropertiesProvider({ children }) {
   const [properties, setProperties] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
+  const [favorites, setFavorites] = useState([]);
+
+  const favoriteProperties = properties.filter(property =>
+    favorites.includes(property.id)
+);
 
   async function fetchProperties() {
     // const controller = new AbortController();
@@ -17,9 +22,7 @@ function PropertiesProvider({ children }) {
       setIsLoading(true);
       const res = await fetch(`${BASE_URL}/properties`);
       const data = await res.json();
-
       await delay(import.meta.env.DEV ? 1000 : 0);
-
       setProperties(data);
     } catch {
       setError("There is some error loading Properties...");
@@ -29,8 +32,30 @@ function PropertiesProvider({ children }) {
   }
 
   useEffect(() => {
-  fetchProperties();
-}, []);
+    fetchProperties();
+  }, []);
+
+  function addFavorites(id) {
+    setFavorites((favorites) => [...favorites, id]);
+  }
+
+  function removeFavorites(id) {
+    setFavorites((favorites) =>
+    favorites.filter((favoriteId) => favoriteId !== id)
+);
+  }
+
+  function toggleFavorite(id) {
+    if (favorites.includes(id)) {
+      removeFavorites(id);
+    } else {
+      addFavorites(id);
+    }
+  }
+
+  
+
+console.log("Favorite Properties:", favoriteProperties);
 
   return (
     <PropertiesContext.Provider
@@ -38,6 +63,9 @@ function PropertiesProvider({ children }) {
         properties,
         isLoading,
         error,
+        toggleFavorite,
+        favoriteProperties,
+        favorites
       }}
     >
       {children}
