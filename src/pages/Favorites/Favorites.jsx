@@ -13,7 +13,7 @@ function Favorites() {
       <section className={styles.hero}>
         <h1>❤️ My Favorites</h1>
         <p>Save properties you love and access them anytime.</p>
-        <p>{favoriteProperties.length} Saved Properties</p>
+        <p>{favoriteProperties.length < 1 ? "You haven't saved any properties yet. " : `${favoriteProperties.length} Saved Properties`}</p>
       </section>
 
       {error && <Message message={error} />}

@@ -9,7 +9,6 @@ import Favorites from "./pages/Favorites/Favorites";
 import Layout from "./components/Layout/Layout";
 import { PropertiesProvider } from "./contexts/PropertiesContext";
 
-
 function App() {
   return (
   <PropertiesProvider>

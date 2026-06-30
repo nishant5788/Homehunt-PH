@@ -1,7 +1,10 @@
+import { useProperties } from "../../contexts/PropertiesContext";
 import styles from "./Navbar.module.css";
 import { NavLink } from "react-router-dom";
 
 function Navbar() {
+
+const {favorites} = useProperties();
   return (
     <header className={styles.header}>
        <NavLink className={styles.logo} to="/"> HomeHunt PH</NavLink>
@@ -16,7 +19,7 @@ function Navbar() {
           </li>
 
           <li>
-            <NavLink to="/favorites">Favorites</NavLink>
+            <NavLink to="/favorites">Favorites {favorites.length < 1 ? "" : `(${favorites.length})`} </NavLink>
           </li>
 
           <li>

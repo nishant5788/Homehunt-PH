@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { delay } from "../utils/delay";
+import { useLocalStorageState } from "../hooks/useLocalStorageState";
 
 const BASE_URL = "http://localhost:8000";
 
@@ -9,7 +10,8 @@ function PropertiesProvider({ children }) {
   const [properties, setProperties] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
-  const [favorites, setFavorites] = useState([]);
+  // const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useLocalStorageState([], "favorites");
 
   const favoriteProperties = properties.filter(property =>
     favorites.includes(property.id)
