@@ -7,7 +7,7 @@ function HeroBanner() {
 
   return (
     <section className={styles.hero}>
-      <div className={styles.heroContent}>
+      <div className="container">
         <h1>Find Your Perfect Home In The Philippines</h1>
 
         <p>

@@ -1,4 +1,3 @@
-import styles from "./Home.module.css";
 import PopularCities from "../../components/PopularCities/PopularCities";
 import WhyUs from "../../components/WhyUs/WhyUs";
 import FeaturedProperties from "../../components/FeaturedProperties/FeaturedProperties";

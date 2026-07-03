@@ -70,8 +70,6 @@ function Properties() {
       }
 
       fetchProperties();
-
-      console.log("searchTerm is" + searchTerm);
     },
     [searchedCity, searchTerm],
   );

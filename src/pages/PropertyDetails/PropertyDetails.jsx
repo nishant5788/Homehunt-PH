@@ -7,18 +7,9 @@ import Spinner from "../../components/Spinner/Spinner";
 function PropertyDetails() {
   const { id } = useParams();
 
-  console.log(id);
-
   const { properties, isLoading } = useProperties();
 
   if (isLoading) return <Spinner />;
-
-  console.log("properties", properties);
-  console.log("id from url", id);
-  console.log(
-    "property ids",
-    properties.map((p) => p.id),
-  );
 
   const property = properties.find(
     (property) => Number(property.id) === Number(id),

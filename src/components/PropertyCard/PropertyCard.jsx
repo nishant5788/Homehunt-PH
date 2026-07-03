@@ -6,8 +6,6 @@ function PropertyCard({property}) {
 
   const {toggleFavorite, favorites} = useProperties();
   const isFavorite = favorites.includes(property.id);
-
-console.log("isFavorite is " + isFavorite);
     
   return (
     

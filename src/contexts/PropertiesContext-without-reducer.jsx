@@ -52,10 +52,6 @@ function PropertiesProvider({ children }) {
     }
   }
 
-  
-
-console.log("Favorite Properties:", favoriteProperties);
-
   return (
     <PropertiesContext.Provider
       value={{

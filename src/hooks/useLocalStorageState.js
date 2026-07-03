@@ -5,7 +5,6 @@ export function useLocalStorageState(initialState, key) {
 
     const [value, setValue] = useState(function(){
     const storedValues = localStorage.getItem(key);
-    console.log(storedValues);
     return storedValues ? JSON.parse(storedValues) : initialState;
   });
 

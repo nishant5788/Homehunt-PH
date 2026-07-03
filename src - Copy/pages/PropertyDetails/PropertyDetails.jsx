@@ -7,8 +7,6 @@ const BASE_URL = "http://localhost:8000";
 function PropertyDetails() {
   const params = useParams();
 
-  console.log(params.id);
-
   const [currentProperty, setCurrentProperty] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 

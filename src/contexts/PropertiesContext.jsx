@@ -28,21 +28,18 @@ function reducer(state, action) {
     case "properties/loaded":
       return {
         ...state,
-        isLoading: false,
         properties: action.payload,
       };
 
     case "favorites/add":
       return {
         ...state,
-        isLoading: false,
         favorites: [...state.favorites, action.payload],
       };
 
     case "favorites/remove":
       return {
         ...state,
-        isLoading: false,
         favorites: state.favorites.filter(
           (favorite) => favorite !== action.payload,
         ),
@@ -51,7 +48,6 @@ function reducer(state, action) {
     case "rejected":
       return {
         ...state,
-        isLoading: false,
         error: action.payload,
       };
 

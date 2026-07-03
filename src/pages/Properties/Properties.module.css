@@ -15,15 +15,11 @@
 
 .propertyGrid {
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto 3rem auto;
   padding: 20px;
-
   display: grid;
-
   grid-template-columns:
     repeat(auto-fill, minmax(320px, 320px));
-
   gap: 25px;
-
   justify-content: center;
 }

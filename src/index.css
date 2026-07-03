@@ -15,6 +15,10 @@ body {
   padding:0 1rem;
 }
 
+h1 {
+  font-size: 4rem;
+}
+
 .section {
   padding: 4rem 0;
 }
@@ -28,4 +32,3 @@ body {
 .section__header p {
   color:#666;
 }
-
