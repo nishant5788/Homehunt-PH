@@ -19,7 +19,9 @@ function HeroBanner() {
           <button onClick={() => {
             navigate("/properties")
           }}>Browse Properties</button>
-          <button className={styles.secondary}>Post Property</button>
+          <button onClick={() => {
+            navigate("/post-property")
+          }} className={styles.secondary}>Post Property</button>
         </div>
       </div>
     </section>

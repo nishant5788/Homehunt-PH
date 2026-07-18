@@ -8,6 +8,7 @@ import PropertyDetails from "./pages/PropertyDetails/PropertyDetails";
 import Favorites from "./pages/Favorites/Favorites";
 import Layout from "./components/Layout/Layout";
 import { PropertiesProvider } from "./contexts/PropertiesContext";
+import PostProperty from "./pages/PostProperty/PostProperty";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
     <Route path="/contact" element={<Contact />} />
     <Route path="/properties" element={<Properties />} />
     <Route path="/properties/:id" element={<PropertyDetails />} />
+    <Route path="/post-property" element={<PostProperty />} />
     <Route path="/favorites" element={<Favorites />} />
     </Route>
    </Routes>
