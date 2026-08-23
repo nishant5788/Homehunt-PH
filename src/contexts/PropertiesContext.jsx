@@ -3,10 +3,8 @@ import {
   useContext,
   useEffect,
   useReducer,
-  useState,
 } from "react";
 import { delay } from "../utils/delay";
-import { useLocalStorageState } from "../hooks/useLocalStorageState";
 
 const BASE_URL = "http://localhost:8000";
 const PropertiesContext = createContext();

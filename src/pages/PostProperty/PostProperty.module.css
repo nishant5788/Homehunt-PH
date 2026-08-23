@@ -95,6 +95,17 @@ textarea{
     font-size:16px;
 }
 
+button:disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.required {
+    color: red;
+    top: 0.2rem;
+    position: relative;
+}
+
 .buttons button:first-child{
     background:#ddd;
 }

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./PropertiesFilters.module.css";
-import { useKey } from "../../../../../React-Practice/usepopcorn/src/useKey";
+import { useKey } from "../../utils/useKey";
 
 const BASE_URL = "http://localhost:8000";
 

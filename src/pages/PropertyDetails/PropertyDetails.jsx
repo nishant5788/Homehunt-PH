@@ -12,7 +12,7 @@ function PropertyDetails() {
   if (isLoading) return <Spinner />;
 
   const property = properties.find(
-    (property) => Number(property.id) === Number(id),
+    (property) => property.id === id,
   );
 
   if (!property) return <Message message="Property not found" />;
@@ -57,7 +57,7 @@ function PropertyDetails() {
 
           <ul>
             {property.features?.map((feature) => (
-              <li>{feature}</li>
+              <li key={feature}>{feature}</li>
             ))}
           </ul>
         </section>

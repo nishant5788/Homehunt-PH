@@ -1,13 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+import Layout from "./components/Layout/Layout";
+import { PropertiesProvider } from "./contexts/PropertiesContext";
+
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Properties from "./pages/Properties/Properties";
 import PropertyDetails from "./pages/PropertyDetails/PropertyDetails";
 import Favorites from "./pages/Favorites/Favorites";
-import Layout from "./components/Layout/Layout";
-import { PropertiesProvider } from "./contexts/PropertiesContext";
 import PostProperty from "./pages/PostProperty/PostProperty";
 
 function App() {
