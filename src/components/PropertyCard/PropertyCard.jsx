@@ -11,15 +11,17 @@ function PropertyCard({property}) {
     
     <div className={styles.card}>
               <img
-                src={property.image}
-                alt={property.title}
-              />
+  src={
+    property.images[0].startsWith("http")
+      ? property.images[0]
+      : `https://untera.io${property.images[0]}`
+  }
+/>
               <div className={styles.cardBody}>
                 <h3>{property.title}</h3>
-                <p>{property.city}</p>
-                <p>{property.id}</p>
-                <span>{property.bedrooms} Bed • {property.bathrooms} Bath</span>
-                <h4>₱{property.price}/month</h4>
+                <p>{property.address}</p>
+                <span>{property.bedrooms} Bed • {property.bathrooms} Bath • {property.type} ({property.sqm}sqm)</span>
+                <h4>₱{property.original_price}/month</h4>
                 <div className={styles.cardButtons}>
                 <Link className={styles.btn} to={property.id}>View Details</Link>
                 <button onClick={() => toggleFavorite(property.id)} className={`${styles.btn} ${styles.favorites}`}>

@@ -12,6 +12,7 @@ function Footer() {
         </p>
 
         <button onClick={() => navigate("/properties")}>Start Searching</button>
+        <p><a target="_blank" href="https://untera.io">Powered by Untera</a></p>
       </section>
   );
 }

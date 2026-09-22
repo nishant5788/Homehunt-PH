@@ -4,9 +4,8 @@ import {
   useEffect,
   useReducer,
 } from "react";
-import { delay } from "../utils/delay";
+import { getProperties } from "../services/apiProperties";
 
-const BASE_URL = "http://localhost:8000";
 const PropertiesContext = createContext();
 const initialState = {
   properties: [],
@@ -59,10 +58,7 @@ function PropertiesProvider({ children }) {
     reducer,
     initialState,
   );
-  // const [properties, setProperties] = useState([]);
-  // const [isLoading, setIsLoading] = useState(true);
-  // const [error, setError] = useState("");
-  // const [favorites, setFavorites] = useLocalStorageState([], "favorites");
+  
 
   const favoriteProperties = properties.filter((property) =>
     favorites.includes(property.id),
@@ -70,13 +66,14 @@ function PropertiesProvider({ children }) {
 
   async function fetchProperties() {
     try {
+
+
       dispatch({ type: "rejected", payload: "" });
       dispatch({ type: "loading", payload: true });
-      const res = await fetch(`${BASE_URL}/properties`);
-      const data = await res.json();
-      await delay(import.meta.env.DEV ? 1000 : 0);
+      const data = await getProperties();
       dispatch({ type: "properties/loaded", payload: data });
-    } catch {
+    } catch(err) {
+      console.error("Failed to load properties:", err);
       dispatch({
         type: "rejected",
         payload: "There is some error loading Properties...",
