@@ -11,11 +11,11 @@ function PropertyCard({property}) {
     
     <div className={styles.card}>
               <img
-  src={
-    property.images[0].startsWith("http")
-      ? property.images[0]
-      : `https://untera.io${property.images[0]}`
-  }
+  src={property.images?.[0] || "/placeholder.webp"}
+  onError={(e) => {
+    e.currentTarget.src = "/placeholder.webp";
+  }}
+  alt={property.title}
 />
               <div className={styles.cardBody}>
                 <h3>{property.title}</h3>

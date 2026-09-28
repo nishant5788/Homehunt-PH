@@ -29,7 +29,7 @@ testUntera();
       <HeroBanner />
       <FeaturedProperties />
       <WhyUs />
-      <PopularCities />
+      {/* <PopularCities /> */}
     </main>
   );
 }

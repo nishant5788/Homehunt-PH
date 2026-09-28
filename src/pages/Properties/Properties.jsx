@@ -39,8 +39,8 @@ function Properties() {
     filteredProperties = filteredProperties.filter(
       (property) =>
         property.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        property.city.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        property.province.toLowerCase().includes(searchTerm.toLowerCase()),
+        property.address.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        property.price.toLowerCase().includes(searchTerm.toLowerCase()),
     );
   }
 
