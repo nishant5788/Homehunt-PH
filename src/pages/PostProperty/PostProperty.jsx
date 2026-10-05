@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./PostProperty.module.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 function PostProperty() {
 

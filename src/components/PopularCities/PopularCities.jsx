@@ -1,5 +1,5 @@
 import styles from "./PopularCities.module.css";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import Message from "../Message/Message";
 import Spinner from "../Spinner/Spinner";
 import { useProperties } from "../../contexts/PropertiesContext";

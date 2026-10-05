@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 import styles from "./PropertyDetails.module.css";
 import { useProperties } from "../../contexts/PropertiesContext";
 import Message from "../../components/Message/Message";

@@ -1,4 +1,4 @@
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router";
 import styles from "./HeroBanner.module.css";
 
 function HeroBanner() {
