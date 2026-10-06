@@ -4,7 +4,6 @@ import { useLoaderData } from "react-router";
 import PropertiesFilters from "../../components/PropertiesFilters/PropertiesFilters";
 import Message from "../../components/Message/Message";
 import Spinner from "../../components/Spinner/Spinner";
-// import { useProperties } from "../../contexts/PropertiesContext";
 import { getProperties } from "../../services/apiProperties";
 import { useNavigation } from "react-router";
 

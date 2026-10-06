@@ -1,10 +1,12 @@
-import { useProperties } from "../../contexts/PropertiesContext";
+// import { useProperties } from "../../contexts/PropertiesContext";
+import { useSelector } from "react-redux";
 import styles from "./Navbar.module.css";
 import { NavLink } from "react-router";
+import { getFavorites } from "../../redux/favoriteSlice";
 
 function Navbar() {
 
-const {favorites} = useProperties();
+const favorites = useSelector(getFavorites);
   return (
     <header className={styles.header}>
        <NavLink className={styles.logo} to="/"> HomeHunt PH</NavLink>
